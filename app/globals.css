@@ -1,9 +1,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -104,4 +104,80 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.tweede_kamer__balk_outer {
+  width: 330px;
+  display: flex;
+  background: #ffffff12;
+}
+
+.tweede_kamer:after {
+  height: 100px;
+  width: 1px;
+  background: white;
+  left: 50%;
+  position: absolute;
+  content: "";
+  top: calc(50% - 50px);
+  z-index: -1;
+}
+
+.tweede_kamer {
+  position: relative;
+}
+
+.tweede_kamer:before {
+  content: "Meerderheid";
+  top: -50px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.partijKnoppen button {
+  padding: 7px 20px;
+  margin: 0px 10px 10px 0;
+}
+
+.partijKnoppen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main.page_main__nw1Wk {
+  padding: 10px;
+}
+
+.partijKnoppen button {
+  border: 1px solid;
+  border-radius: 28px;
+  background: black;
+  color: #d1d1d1;
+}
+
+.tweede_kamer__balk_outer > div {
+  overflow: hidden;
+}
+
+span.percentage {
+  margin-top: 10px;
+  display: block;
+  opacity: 0.6;
+  font-size: 23px;
+}
+
+.onder_tweede_kamer {
+  display: flex;
+  justify-content: space-between;
+}
+
+button.reset-knop {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 9px;
+  background: #252525;
+  border: 0px;
 }
