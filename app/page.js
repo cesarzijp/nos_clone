@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const partijData = [
     { zetels: 24, naam: "VVD", kleur: "#7C4DFF" },
-    { zetels: 25, naam: "GL PvdA", kleur: "#FFC107" },
+    { zetels: 25, naam: "GLPvdA", kleur: "#FFC107" },
     { zetels: 37, naam: "PVV", kleur: "#4CAF50" },
     { zetels: 20, naam: "NSC", kleur: "#FFC07F" },
     { zetels: 9, naam: "D66", kleur: "#9FE77E" },
