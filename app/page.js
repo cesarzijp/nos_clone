@@ -1,25 +1,24 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const partijData = [
-    { zetels: 24, naam: "VVD", kleur: "#7C4DFF" },
-    { zetels: 25, naam: "GLPvdA", kleur: "#FFC107" },
-    { zetels: 37, naam: "PVV", kleur: "#4CAF50" },
-    { zetels: 20, naam: "NSC", kleur: "#FFC07F" },
-    { zetels: 9, naam: "D66", kleur: "#9FE77E" },
-    { zetels: 7, naam: "BBB", kleur: "#52796f" },
-    { zetels: 5, naam: "CDA", kleur: "#5FA72C" },
-    { zetels: 5, naam: "SP", kleur: "#E1220D" },
-    { zetels: 3, naam: "FvD", kleur: "#B91BD5" },
-    { zetels: 3, naam: "SGP", kleur: "#66C1DA" },
-    { zetels: 3, naam: "CU", kleur: "#A3FF6A" },
-    { zetels: 3, naam: "Denk", kleur: "#6A96FF" },
-    { zetels: 2, naam: "Volt", kleur: "#441E67" },
-    { zetels: 1, naam: "Ja21", kleur: "#1E6738" },
+    { zetels: 24, naam: "VVD", kleur: "rgba(124, 77, 255, 0.2)" },
+    { zetels: 25, naam: "GLPvdA", kleur: "rgba(255, 193, 7, 0.2)" },
+    { zetels: 37, naam: "PVV", kleur: "rgba(76, 175, 80, 0.2)" },
+    { zetels: 20, naam: "NSC", kleur: "rgba(255, 192, 127, 0.2)" },
+    { zetels: 9, naam: "D66", kleur: "rgba(159, 231, 126, 0.2)" },
+    { zetels: 7, naam: "BBB", kleur: "rgba(82, 121, 111, 0.2)" },
+    { zetels: 5, naam: "CDA", kleur: "rgba(95, 167, 44, 0.2)" },
+    { zetels: 5, naam: "SP", kleur: "rgba(225, 34, 13, 0.2)" },
+    { zetels: 3, naam: "FvD", kleur: "rgba(185, 27, 213, 0.2)" },
+    { zetels: 3, naam: "SGP", kleur: "rgba(102, 193, 218, 0.2)" },
+    { zetels: 3, naam: "CU", kleur: "rgba(163, 255, 106, 0.2)" },
+    { zetels: 3, naam: "Denk", kleur: "rgba(106, 150, 255, 0.2)" },
+    { zetels: 2, naam: "Volt", kleur: "rgba(68, 30, 103, 0.2)" },
+    { zetels: 1, naam: "Ja21", kleur: "rgba(30, 103, 56, 0.2)" },
   ];
 
   const [partijDataState, setPartijDataState] = useState(partijData);
@@ -60,9 +59,11 @@ export default function Home() {
         ...gekozenPartijState,
         partijDataState[partijIndexInData],
       ]);
+      e.target.classList.remove("knop-inactief");
     } else {
       console.log("zit er al in");
       setGekozenPartijState(gekozenPartijState.filter((a) => a.naam !== naam));
+      e.target.classList.add("knop-inactief");
     }
 
     console.log(gekozenPartijState);
@@ -90,7 +91,9 @@ export default function Home() {
           <span className='percentage'>
             {Math.round(zetelPercentage * 100).toString()}%
           </span>
-          <span className='percentage'>{totaalGekozenZetels.toString()}</span>
+          <span className='percentage'>
+            {totaalGekozenZetels.toString()} zetels
+          </span>
         </div>
       </div>
       <div className='onderkant'>
@@ -104,7 +107,9 @@ export default function Home() {
             <button
               style={{
                 borderColor: item.kleur,
+                backgroundColor: item.kleur,
               }}
+              className='knop-inactief'
               onClick={(e) => maakActief(item.naam, e)}
               key={item.naam}
             >

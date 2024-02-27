@@ -181,3 +181,7 @@ button.reset-knop {
   background: #252525;
   border: 0px;
 }
+
+button.knop-inactief {
+  background-color: transparent !important;
+}
